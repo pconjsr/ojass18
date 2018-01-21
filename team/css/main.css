@@ -361,10 +361,9 @@ body {
 .container section.goingdown div.screens .screen {
     display: block;
     float: left;
-    margin-right: 2.51256%;
-    width: 48.74372%
+    /*margin-right: 2.51256%;*/
+    width: 24.74372%
 }
-
 .container section.goingdown div.screens .screen:last-child {
     margin-right: 0
 }
@@ -496,7 +495,9 @@ h3 {
 }
 
 h4 {
-    font-size: 1.7em
+    font-size: 1.7em;
+    position:relative;
+    bottom:20px;
 }
 
 a {
@@ -987,13 +988,13 @@ only screen and (-o-min-device-pixel-ratio: 1.3 / 1),
 only screen and (min-resolution: 125dpi),
 only screen and (min-resolution: 1.3dppx) {
     section.goingdown .screen .satellitecontainer .screen1 span#illustrationicon {
-        background-image: url("../img/icon_triangle@2x.png");
-        background-size: 200px 114px
+        /*background-image: url("../img/icon_triangle@2x.png");*/
+        /*background-size: 200px 114px*/
     }
 }
 
 section.goingdown .screen .satellitecontainer .screen1 span#brandingicon {
-    background-image: url("http://ojass.in/2017/team_ojass/img/team/techsec.jpg")
+    /*background-image: url("http://ojass.in/2017/team_ojass/img/team/techsec.jpg")*/
     /*background-size: 200px 114px;*/
 }
 
@@ -1085,7 +1086,7 @@ section.goingdown .screen div.firecontainer img.fire2 {
     max-width: 100%;
     height: auto;
     display: block;
-    top: 320px
+    top: 257px
 }
 
 section.goingdown .screen div.firecontainer img.fire1 {
@@ -1590,6 +1591,7 @@ div.nebula.nebula-4 {
 @media screen and (min-width: 1260px) {
     section.goingdown div.lastscreen {
         margin-left: 25.62814%
+        display:inline-flex;
     }
     section.whoall div.people div.person:nth-child(3n) {
         margin-right: 0
@@ -2924,5 +2926,50 @@ only screen and (min-resolution: 1.3dppx) {
     background: #e30076;
     color: #ffffff;
     text-shadow: none
+}
+
+@media screen and (min-width: 767px) {
+    .singlerow {
+        width:38.743724% !important;
+        display: inline-grid !important;
+        margin-right:30% !important;
+        margin-left:26% !important;
+    }
+
+    .screen2txt{
+        margin-left:8% !important;
+        margin-top:130% !important;
+        text-align: center;
+    }
+
+    .screen2txt a{
+        float:left !important;
+        text-align: left;
+        margin-left:0px;
+    }
+
+    .socialicons{
+        position: relative !important;
+        bottom:50px !important;
+        left:5px !important; 
+        margin-left: 5px !important;
+        font-size:1.3em !important;
+    }
+
+    .singlerowfire{
+        top:300px !important; 
+        left:8px !important; 
+    }
+}
+
+@media screen and (max-width: 767px){
+
+    .socialicons{
+        position: relative !important;
+        bottom:30px !important;
+        left:34% !important;
+        font-size: 1.5em !important;
+        margin-left: 3px !important;
+    }
 }
 
