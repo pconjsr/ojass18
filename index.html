@@ -3,23 +3,26 @@
     <head>
         <title>Ojass 2018</title>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="The Annual Techno management fest of NIT Jamshedpur">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <meta name="author" content="Ojass 2018">
-        <link rel="shortcut icon" href="img/ojass_favicon.png">
+        
+        <link rel="stylesheet" href="css/belt.css">
         <link rel="stylesheet" href="css/main.css">
+        
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'> 
-  
+        
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/events.css">
     </head>
     <body>
-        
+        <img src="img/asteroids-left.png" alt="pic" class="a-left">
+         <img src="img/asteroids-right.png" alt="pic" class="a-right">
+          <img src="img/asteroids-left.png" alt="pic" class="b-left">
+           <img src="img/asteroids-right.png" alt="pic" class="b-right">
+
         <div id="logo">
-            <a href="#" ><img src="img/ojlogo_resized.png" id="logoimg"></a>
+            <a href="#" ><img src="img/ojlogo.png" id="logoimg"></a>
         </div>
         <div class="links" >
-            <a href="http://ojass.in/2017/events/index.php" target="_blank">
+            <a>
               <span class="text">LAST YEAR EVENTS</span>
               <span class="line -right"></span>
               <span class="line -top"></span>
@@ -58,7 +61,7 @@
         </div>
         <div data-0="background-position:0px 0px;" data-end="background-position:0px -15000px;" id="stars"></div>
         <a class="backtotop" href="#top"></a>
-        <div class="parallax ufo"  style="top:80px;right:50px;background-size:cover"></div>
+        <div class="parallax ufo"  style="display:none;top:80px;right:80px;background-size:cover"></div>
         
         <nav class="social">
           <ul>
@@ -90,7 +93,7 @@
 
 
         </div>
-        <div class="mooncontainer">
+        <div class="mooncontainer" style="z-index:2">
             <div class="moon">
                 <div class="asteroid" id="asteroid1"></div>
                 <div  id="asteroid2"></div>
@@ -108,10 +111,62 @@
                 </section>
             </div>
         </div>
-      
+        <div class="triangles">
+            <a href="#goingdown">
+                <div class="triangle-down first"></div>
+                <div class="triangle-down second"></div>
+                <div class="triangle-down third"></div>
+            </a>
+        </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     
+
+
+
+
+<div class="globe">
+  <figure class="surface">
+    <a href="#d" class="beacon" data-location="Team"></a>
+    <a href="#d" class="beacon" data-location="Events"></a>
+    <a href="#d" class="beacon" data-location="Sponsers"></a>
+    <a href="#d" class="beacon" data-location="FAQ"></a>
+    <a href="#d" class="beacon" data-location="Home"></a>
+  </figure>
+</div>
+
+<div class="container overflow" style="overflow:unset">
+<div class="parallax asteroid-field skrollable rendered  " data-850="top: 1950px;" data-3550="top:-200px; " 
+style="top: 715.104px;"></div>
+<div class="parallax asteroid-field-blurred skrollable rendered  " data-1800="top: 2500px;" data-2650="top:-320px;" style="top: 506.757px;"></div>
+</div>
+
+
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        
+        <script type="text/javascript">
+          var second,third,fourth,fifth,height,width,base,spaceStart,spaceEnd;
+          $(window).resize(function(){adjustParams();})
+$(document).ready(function(){adjustParams();})
+function adjustParams(){height=parseInt($(window).height());width=parseInt($(window).width())+20;second=height*2
+third=height*4;fourth=height*6;fifth=height*8;}
+
+function moveAsteroids(){
+
+  var top=$(window).scrollTop();var a_width=664;var a_height=751;var from,to,start,end;if(top<second){from=-400;to=second;start=0;end=second;$(".a-left").css({"left":getPos(-a_width,width,start,end,top),"top":getPos(from,to,start,end,top)});}
+if(top>second&&top<third){from=second;to=third+height/2;start=second;end=third;$(".a-right").css({"left":getPos(width,-a_width,start,end,top),"top":getPos(from,to,start,end,top)});}
+if(top>third&&top<fourth){from=third;to=fourth+height/2;start=third;end=fourth;$(".b-left").css({"left":getPos(-a_width,width,start,end,top),"top":getPos(from,to,start,end,top)});}
+if(top>fourth&&top<fifth){from=fourth;to=fifth;start=fourth;end=fifth;$(".b-right").css({"left":getPos(width,-a_width/3,start,end,top),"top":getPos(from,to,start,end,top)});}}
+
+function getPos(valFrom,valTo,start,end,cur,inert){if(typeof(inert)==="undefined")inert=1;if(cur>start){if(cur>end)return valTo;else{var diff=end-start;var pos=valFrom+inert*(valTo-valFrom)*(cur-start)/diff;return pos;}}else return valFrom;}
+
+$(window).on('scroll', function (e){
+ 
+   moveAsteroids();
+});
+        </script> 
+
+
     </body>
 </html>

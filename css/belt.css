@@ -1,0 +1,20 @@
+.a-left{
+    position:absolute;
+    left:-100%;
+    z-index:1
+}
+.a-right{
+    position:absolute;
+    left:100%;
+    z-index:1
+}
+.b-left{
+    position:absolute;
+    left:-100%;
+    z-index:1
+}
+.b-right{
+    position:absolute;
+    left:100%;
+    z-index:1
+}
